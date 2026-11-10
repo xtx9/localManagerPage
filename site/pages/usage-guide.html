@@ -1,0 +1,198 @@
+<!-- 파일명: docs/gitpage/pages/usage-guide.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>앱별 사용 방법 | localManager Docs</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">LM</span>
+          <span>localManager Docs</span>
+        </a>
+        <nav class="nav" aria-label="메인 메뉴">
+          <a href="../index.html">홈</a>
+          <a href="./usage-guide.html">사용 가이드</a>
+          <a href="./development-guide.html">개발 가이드</a>
+          <a href="../../../docs/platforms/README.md">플랫폼 문서</a>
+        </nav>
+        <a class="button button-inline" href="../../../README.md">프로젝트 소개</a>
+      </div>
+    </header>
+
+    <main class="container doc-layout">
+      <aside class="doc-sidebar">
+        <nav aria-label="사용 가이드 메뉴">
+          <h3>메뉴</h3>
+          <a href="#overview">개요</a>
+          <a href="#vscode">VS Code</a>
+          <a href="#windows">Windows</a>
+          <a href="#android">Android</a>
+          <a href="#web">Web / PWA</a>
+          <a href="#browser">Browser Extension</a>
+          <a href="#workbench">AI Workbench</a>
+          <a href="#selection">선택 가이드</a>
+        </nav>
+      </aside>
+
+      <div class="doc-content">
+        <section id="overview" class="doc-section">
+          <div class="eyebrow">Usage guide</div>
+          <h1>앱별 사용 방법</h1>
+          <div class="meta-brief">
+            <span class="meta-tag">로컬 우선</span>
+            <span class="meta-tag">사용자 주도 동기화</span>
+            <span class="meta-tag">안전한 AI 보조</span>
+          </div>
+          <p>
+            localManager는 한 번에 하나의 앱만 있는 구조가 아니라, 같은 기본 개념을 각 플랫폼에서
+            다르게 표현하는 제품군입니다. 각 앱은 프로젝트, 메모, 작업, 일정, 문서를 공통 원칙에 따라
+            관리합니다.
+          </p>
+          <p>
+            핵심은 로컬 우선 저장과 명시적 동기화입니다. 자동 동기화는 기본 비활성화하고, 사용자가 직접
+            시작한 동기화나 백업 흐름만 허용합니다.
+          </p>
+        </section>
+
+        <section id="vscode" class="doc-section">
+          <h2>VS Code Extension</h2>
+          <p>개발자가 가장 자주 사용하는 환경에서 프로젝트와 문서를 연결하는 최적의 입구입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>VS Code에서 워크스페이스 또는 저장소를 엽니다.</div></li>
+            <li><span>2</span><div>localManager 뷰와 명령을 실행해 프로젝트를 등록하거나 선택합니다.</div></li>
+            <li><span>3</span><div>메모, 작업 항목, 문서와 코드 변경 사항을 같은 맥락에서 점검합니다.</div></li>
+            <li><span>4</span><div>AI 제안과 문서 요약은 보조로만 사용하고, 변경과 배포는 명시적 승인 흐름으로 처리합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 코드 중심 개발, 문서와 작업 흐름 통합, 워크스페이스별 프로젝트 관리.</p>
+        </section>
+
+        <section id="windows" class="doc-section">
+          <h2>Windows App</h2>
+          <p>장기적으로 로컬 데이터를 통합 관리하는 데스크톱 중심 앱입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>Windows 앱을 열고 프로젝트/작업 목록을 생성합니다.</div></li>
+            <li><span>2</span><div>메모, 일정, 문서, 파일 연결 정보를 로컬 DB에 정리합니다.</div></li>
+            <li><span>3</span><div>작업 우선순위와 상태를 관리하고, 필요한 경우 수동 동기화 또는 백업을 실행합니다.</div></li>
+            <li><span>4</span><div>로컬 보관된 데이터와 AI 문맥을 안전하게 조합합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 데스크톱 중심 운영, 장기 작업 흐름, 개인 로컬 관리.</p>
+        </section>
+
+        <section id="android" class="doc-section">
+          <h2>Android App</h2>
+          <p>이동 중에도 메모와 일정, 작업 상태를 유지하는 모바일 중심 옵션입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>앱을 실행해 프로젝트와 작업 목록을 확인합니다.</div></li>
+            <li><span>2</span><div>메모, 체크리스트, 일정 정보를 입력합니다.</div></li>
+            <li><span>3</span><div>간단한 알림 및 리마인더를 사용해 다음 행동을 정리합니다.</div></li>
+            <li><span>4</span><div>필요 시 로컬 백업 또는 사용자가 직접 시작한 수동 동기화를 수행합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 이동 중 작업 관리, 짧은 메모 기록, 빠른 우선순위 점검.</p>
+        </section>
+
+        <section id="web" class="doc-section">
+          <h2>Web / PWA</h2>
+          <p>브라우저에서 로컬 중심 데이터를 사용하도록 설계된 접근형 인터페이스입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>브라우저로 앱에 접속합니다.</div></li>
+            <li><span>2</span><div>IndexedDB 또는 브라우저 로컬 저장소를 기반으로 작업과 메모를 보관합니다.</div></li>
+            <li><span>3</span><div>오프라인 상태에서도 핵심 작업 흐름을 유지합니다.</div></li>
+            <li><span>4</span><div>필요한 경우 로컬 백업과 데이터를 복원합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 브라우저 기반 빠른 접근, 간단한 대시보드, 오프라인 사용 환경.</p>
+        </section>
+
+        <section id="browser" class="doc-section">
+          <h2>Browser Extension</h2>
+          <p>브라우저 컨텍스트를 보조적으로 기록하는 경량 도구입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>브라우저 확장을 설치하고 필요한 권한을 확인합니다.</div></li>
+            <li><span>2</span><div>페이지에서 아이디어, 링크, 짧은 메모를 사용자 명시적 동작으로 저장합니다.</div></li>
+            <li><span>3</span><div>저장된 내용은 로컬 본체 앱 또는 다음 단계에서 검토할 수 있습니다.</div></li>
+            <li><span>4</span><div>민감 정보는 저장하지 않으며, 자동 수집을 금지합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 웹 페이지 보조 메모, 아이디어 수집, 빠른 링크 보관.</p>
+        </section>
+
+        <section id="workbench" class="doc-section">
+          <h2>AI Model Workbench</h2>
+          <p>실험 데이터와 모델 관련 정보를 로컬에서 안전하게 관리하는 워크벤치입니다.</p>
+          <ol class="steps">
+            <li><span>1</span><div>데이터셋과 실험 목표를 정리합니다.</div></li>
+            <li><span>2</span><div>로컬 AI 환경에서 평가와 결과를 기록합니다.</div></li>
+            <li><span>3</span><div>장기 결과를 메타데이터와 비교해 추적합니다.</div></li>
+            <li><span>4</span><div>과금 또는 외부 전송이 필요할 때는 사용자가 직접 승인합니다.</div></li>
+          </ol>
+          <p>추천 사용 사례: 로컬 실험 관리, 메타데이터 추적, 비용 제어가 중요한 실험 작업.</p>
+        </section>
+
+        <section id="selection" class="doc-section">
+          <h2>앱 선택 가이드</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>상황</th>
+                  <th>권장 앱</th>
+                  <th>이유</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>개발 작업이 많음</td>
+                  <td>VS Code Extension</td>
+                  <td>코드와 문서, 작업 콘텍스트를 가장 자연스럽게 연결</td>
+                </tr>
+                <tr>
+                  <td>데스크톱 중심 업무</td>
+                  <td>Windows App</td>
+                  <td>장기 로컬 관리와 고밀도 작업에 적합</td>
+                </tr>
+                <tr>
+                  <td>이동 중 확인</td>
+                  <td>Android App</td>
+                  <td>짧은 메모와 우선순위 점검에 유리</td>
+                </tr>
+                <tr>
+                  <td>브라우저 접근이 필요</td>
+                  <td>Web / PWA</td>
+                  <td>접근성과 오프라인 사용에 적합</td>
+                </tr>
+                <tr>
+                  <td>웹 페이지 보조 기록</td>
+                  <td>Browser Extension</td>
+                  <td>사용자 의도 기반의 경량 수집에 적합</td>
+                </tr>
+                <tr>
+                  <td>실험 데이터 관리</td>
+                  <td>AI Model Workbench</td>
+                  <td>로컬 실험과 메타데이터 추적에 적합</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>localManager</strong>
+          <p>앱별 사용 방법과 선택 기준을 정리한 공개 가이드</p>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">홈</a>
+          <a href="./development-guide.html">개발 가이드</a>
+          <a href="../../governance/README.md">거버넌스</a>
+        </div>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

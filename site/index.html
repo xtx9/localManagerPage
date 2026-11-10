@@ -1,0 +1,57 @@
+<!-- 파일명: docs/gitpage/index.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="localManager 공개 문서 뷰어" />
+    <title>문서 뷰어</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-json.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-yaml.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-bash.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/components/prism-typescript.min.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <button
+        id="sidebar-toggle"
+        class="btn-toggle"
+        type="button"
+        aria-label="문서 메뉴 열기"
+        aria-controls="sidebar"
+        aria-expanded="false"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+      <a id="site-title" class="site-title"></a>
+      <span id="current-doc-title" class="current-doc-title" aria-live="polite"></span>
+      <a
+        id="github-link"
+        class="github-link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+    </header>
+
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+    <div class="layout-body">
+      <aside id="sidebar" class="sidebar" aria-label="문서 목차">
+        <nav id="sidebar-nav" class="sidebar-nav" aria-label="문서 목차"></nav>
+      </aside>
+      <div class="content-column">
+        <main id="content" class="main-content content-body" tabindex="-1" aria-live="polite">
+          <p class="loading-message" role="status">문서를 불러오는 중입니다.</p>
+        </main>
+        <footer id="doc-footer" class="doc-footer">
+          <a id="prev-btn" class="nav-btn" href="#" aria-label="이전 문서" hidden>← 이전 문서</a>
+          <a id="next-btn" class="nav-btn" href="#" aria-label="다음 문서" hidden>다음 문서 →</a>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>

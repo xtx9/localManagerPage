@@ -1,0 +1,41 @@
+<!-- 파일명: docs/gitpage/pages/platform-browser.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Extension | localManager Docs</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a class="brand" href="../index.html"><span class="brand-mark">LM</span><span>localManager Docs</span></a>
+        <nav class="nav" aria-label="메인 메뉴">
+          <a href="../index.html">홈</a>
+          <a href="./usage-guide.html">사용 가이드</a>
+          <a href="./development-guide.html">개발 가이드</a>
+        </nav>
+        <a class="button button-inline" href="../../../README.md">프로젝트 소개</a>
+      </div>
+    </header>
+
+    <main class="container doc-layout">
+      <aside class="doc-sidebar"><nav><h3>플랫폼</h3><a href="#overview">개요</a><a href="#workflow">사용 흐름</a><a href="#benefits">장점</a><a href="#notes">주의 사항</a></nav></aside>
+      <div class="doc-content">
+        <section id="overview" class="doc-section">
+          <div class="eyebrow">Platform</div>
+          <h1>Browser Extension</h1>
+          <div class="meta-brief"><span class="meta-tag">보조 입력</span><span class="meta-tag">사용자 명시적 액션</span><span class="meta-tag">최소 권한</span></div>
+          <p>Browser Extension은 브라우저 컨텍스트에서 메모와 링크를 빠르게 남기는 보조 도구입니다. 사용자가 명시적으로 실행했을 때만 데이터를 기록하도록 설계합니다.</p>
+          <p>중요한 점은 자동 수집과 민감한 정보 저장을 허용하지 않는 것입니다. 보조 도구로만 활용해야 합니다.</p>
+        </section>
+        <section id="workflow" class="doc-section"><h2>기본 사용 흐름</h2><ol class="steps"><li><span>1</span><div>브라우저 확장을 설치하고 권한 범위를 확인합니다.</div></li><li><span>2</span><div>현재 페이지에 대한 메모, 링크, 요약을 사용자 행동으로 저장합니다.</div></li><li><span>3</span><div>저장된 데이터는 로컬 또는 메인 앱으로 전달해 후속 작업을 이어갑니다.</div></li><li><span>4</span><div>민감 사항은 보관하지 않고, 명시적 동작만 기록합니다.</div></li></ol></section>
+        <section id="benefits" class="doc-section"><h2>장점</h2><ul><li>웹 컨텍스트를 빠르게 보조 기록</li><li>사용자 의도 기반으로 동작</li><li>메인 앱과 분리된 경량 수집 도구</li></ul></section>
+        <section id="notes" class="doc-section"><h2>주의 사항</h2><ul><li>자동 수집과 민감 정보 저장 금지</li><li>브라우저 보안 범위를 준수해야 함</li><li>주요 앱만이 영구 저장소를 관리하도록 구성</li></ul></section>
+      </div>
+    </main>
+    <footer class="footer"><div class="container footer-inner"><div><strong>localManager</strong><p>Browser Extension 보조 작업 가이드</p></div><div class="footer-links"><a href="../index.html">홈</a><a href="./usage-guide.html">사용 가이드</a></div></div></footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

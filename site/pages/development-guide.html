@@ -1,0 +1,197 @@
+<!-- 파일명: docs/gitpage/pages/development-guide.html -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개발 가이드 | localManager Docs</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container navbar">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">LM</span>
+          <span>localManager Docs</span>
+        </a>
+        <nav class="nav" aria-label="메인 메뉴">
+          <a href="../index.html">홈</a>
+          <a href="./usage-guide.html">사용 가이드</a>
+          <a href="./development-guide.html">개발 가이드</a>
+          <a href="../../../docs/platforms/README.md">플랫폼 문서</a>
+        </nav>
+        <a class="button button-inline" href="../../../README.md">프로젝트 소개</a>
+      </div>
+    </header>
+
+    <main class="container doc-layout">
+      <aside class="doc-sidebar">
+        <nav aria-label="개발 가이드 메뉴">
+          <h3>메뉴</h3>
+          <a href="#overview">개요</a>
+          <a href="#principles">원칙</a>
+          <a href="#structure">구조</a>
+          <a href="#workflow">개발 워크플로</a>
+          <a href="#validation">검증</a>
+          <a href="#platforms">플랫폼별 실무</a>
+        </nav>
+      </aside>
+
+      <div class="doc-content">
+        <section id="overview" class="doc-section">
+          <div class="eyebrow">Development guide</div>
+          <h1>개발 가이드</h1>
+          <div class="meta-brief">
+            <span class="meta-tag">모노레포</span>
+            <span class="meta-tag">로컬 우선</span>
+            <span class="meta-tag">검증 중심</span>
+          </div>
+          <p>
+            localManager는 하나의 앱이 아니라 여러 플랫폼을 동시에 운영하는 모노레포 프로젝트입니다.
+            각 플랫폼은 공통 원칙을 공유하지만, UX, 저장소, 알림 방식, 보안 요구는 서로 다릅니다.
+          </p>
+          <p>
+            개발은 기능 추가보다 문서와 구현 상태의 정합성을 유지하는 것이 우선입니다. 한 플랫폼의
+            문서가 실제 상태와 어긋나면, 사용자 경험과 작업 정확성이 모두 떨어질 수 있습니다.
+          </p>
+        </section>
+
+        <section id="principles" class="doc-section">
+          <h2>핵심 개발 원칙</h2>
+          <ul>
+            <li>로컬 우선 저장: 핵심 데이터는 로컬 저장소에 유지하고, 서버 의존성을 최소화합니다.</li>
+            <li>사용자 주도 동기화: 자동 동기화는 기본 비활성화하고, 사용자가 직접 명시한 동기화만 허용합니다.</li>
+            <li>보안 우선: 비밀정보를 로그나 코드에 남기지 않고, 로그 마스킹과 최소 권한을 적용합니다.</li>
+            <li>AI는 보조: 분석, 요약, 추천에 한정하고, 대규모 삭제, 배포, 과금 등 위험 행위는 제한합니다.</li>
+            <li>문서와 구현 연결: 문서 상태와 실제 구현 상태를 함께 관리해야 합니다.</li>
+          </ul>
+        </section>
+
+        <section id="structure" class="doc-section">
+          <h2>프로젝트 구조</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>디렉터리</th>
+                  <th>역할</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>apps/</td>
+                  <td>VS Code, Windows, Android, Web/PWA, Browser Extension 등 플랫폼별 앱 구현</td>
+                </tr>
+                <tr>
+                  <td>packages/</td>
+                  <td>공통 도메인, 데이터 계약, 유스케이스, 로컬 저장소 어댑터</td>
+                </tr>
+                <tr>
+                  <td>services/</td>
+                  <td>수동 동기화와 외부 연동을 위해 분리된 서비스 수준 로직</td>
+                </tr>
+                <tr>
+                  <td>ai/</td>
+                  <td>로컬 AI, RAG, 문맥 유도 관련 구현</td>
+                </tr>
+                <tr>
+                  <td>database/</td>
+                  <td>스키마, 마이그레이션, 데이터 모델 정리</td>
+                </tr>
+                <tr>
+                  <td>docs/</td>
+                  <td>거버넌스, 플랫폼 문서, 공개용 GitHub Pages, 작업 기록</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="workflow" class="doc-section">
+          <h2>개발 워크플로</h2>
+          <ol class="steps">
+            <li><span>1</span><div>요구사항과 정책을 읽고 플랫폼 문서를 확인합니다.</div></li>
+            <li><span>2</span><div>구현 대상이 공통 코드인지 플랫폼 코드인지 구분합니다.</div></li>
+            <li><span>3</span><div>별도 코드와 테스트를 추가하거나 수정하고, 문서 상태를 반영합니다.</div></li>
+            <li><span>4</span><div>검증 명령을 실행하고 결과를 작업 기록과 changelog에 정리합니다.</div></li>
+          </ol>
+        </section>
+
+        <section id="validation" class="doc-section">
+          <h2>검증 절차</h2>
+          <p>공통 검증은 루트에서, 플랫폼별 검증은 해당 앱 문서를 기준으로 실행합니다.</p>
+          <pre style="background:#f3f6fb; padding:16px; border-radius:12px; overflow:auto; white-space:pre-wrap;">npm run compile:all
+npm test</pre>
+          <p>추가로 앱별 검증 예시는 다음과 같습니다.</p>
+          <ul>
+            <li>브라우저 확장: <code>npm --prefix apps/05-browser-extension test</code></li>
+            <li>VS Code Extension: 해당 앱의 TypeScript compile 또는 extension host 검증</li>
+            <li>Android, Windows, Web/PWA: 각 플랫폼 문서의 빌드·실행 절차 준수</li>
+          </ul>
+        </section>
+
+        <section id="platforms" class="doc-section">
+          <h2>플랫폼별 실무 가이드</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>플랫폼</th>
+                  <th>핵심 개발 방향</th>
+                  <th>주의 포인트</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>VS Code</td>
+                  <td>워크스페이스와 Knowledge, 문서, 작업 흐름 연결</td>
+                  <td>도구 권한, 허용 경로, 사용자 승인 흐름</td>
+                </tr>
+                <tr>
+                  <td>Windows</td>
+                  <td>로컬 중심 데스크톱 운영</td>
+                  <td>OS 자원 경계, 사용자 데이터 보존</td>
+                </tr>
+                <tr>
+                  <td>Android</td>
+                  <td>모바일 중심 메모·일정·작업 관리</td>
+                  <td>실기기 검증, 로컬 보관 정책</td>
+                </tr>
+                <tr>
+                  <td>Web / PWA</td>
+                  <td>브라우저 기반 오프라인 접근</td>
+                  <td>IndexedDB, Service Worker, 백업 정책</td>
+                </tr>
+                <tr>
+                  <td>Browser Extension</td>
+                  <td>사용자 의도 기반 메모 보조</td>
+                  <td>최소 권한, 자동 수집 금지</td>
+                </tr>
+                <tr>
+                  <td>AI Workbench</td>
+                  <td>로컬 실험 및 결과 추적</td>
+                  <td>비용 제어, 안전한 데이터 관리</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>localManager</strong>
+          <p>개발 흐름과 검증 기준을 정리한 공개 가이드</p>
+        </div>
+        <div class="footer-links">
+          <a href="../index.html">홈</a>
+          <a href="./usage-guide.html">사용 가이드</a>
+          <a href="../../governance/README.md">거버넌스</a>
+        </div>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>

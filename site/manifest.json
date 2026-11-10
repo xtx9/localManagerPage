@@ -1,0 +1,54 @@
+{
+  "siteTitle": "localManager Docs",
+  "githubUrl": "https://github.com/peaceunion119/localManager",
+  "menu": [
+    {
+      "id": "intro",
+      "title": "문서 홈",
+      "category": "시작하기",
+      "path": "./pages/intro.md"
+    },
+    {
+      "id": "usage",
+      "title": "사용 가이드",
+      "category": "시작하기",
+      "path": "./pages/usage-guide.html"
+    },
+    {
+      "id": "development",
+      "title": "개발 가이드",
+      "category": "개발",
+      "path": "./pages/development-guide.html"
+    },
+    {
+      "id": "vscode",
+      "title": "VS Code",
+      "category": "플랫폼",
+      "path": "./pages/platform-vscode.html"
+    },
+    {
+      "id": "windows",
+      "title": "Windows",
+      "category": "플랫폼",
+      "path": "./pages/platform-windows.html"
+    },
+    {
+      "id": "android",
+      "title": "Android",
+      "category": "플랫폼",
+      "path": "./pages/platform-android.html"
+    },
+    {
+      "id": "web",
+      "title": "Web / PWA",
+      "category": "플랫폼",
+      "path": "./pages/platform-web.html"
+    },
+    {
+      "id": "browser",
+      "title": "Browser Extension",
+      "category": "플랫폼",
+      "path": "./pages/platform-browser.html"
+    }
+  ]
+}
