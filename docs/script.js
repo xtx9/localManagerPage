@@ -1,4 +1,4 @@
-// 파일명: docs/gitpage/script.js
+// 파일명: apps/07-localManagerPage.git/script.js
 (() => {
   'use strict';
 

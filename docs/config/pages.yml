@@ -1,0 +1,40 @@
+# 파일명: apps/07-localManagerPage.git/config/pages.yml
+# 이 파일은 localManagerPage 저장소의 .github/workflows/pages.yml로 전달되는 설정 원본입니다.
+# GitHub Pages 배포는 자동 실행하지 않으며, 사용자가 Actions에서 직접 시작합니다.
+name: 공개 웹 페이지 배포
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: 공개 페이지 게시
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: 공개 저장소 확인
+        uses: actions/checkout@v4
+
+      - name: GitHub Pages 설정
+        uses: actions/configure-pages@v5
+
+      - name: docs 디렉터리 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # GitHub Pages는 기본적으로 /docs 를 웹 루트로 사용하므로 공개 문서만 docs/에 두고 게시합니다.
+          path: ./docs
+
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4
