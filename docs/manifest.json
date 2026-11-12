@@ -1,6 +1,6 @@
 {
   "siteTitle": "localManager Docs",
-  "githubUrl": "https://github.com/peaceunion119/localManager",
+  "githubUrl": "https://github.com/xtx9/localManagerPage",
   "menu": [
     {
       "id": "intro",
@@ -13,6 +13,12 @@
       "title": "사용 가이드",
       "category": "시작하기",
       "path": "./pages/usage-guide.html"
+    },
+    {
+      "id": "github-actions-setup",
+      "title": "GitHub Actions 설정",
+      "category": "시작하기",
+      "path": "./pages/github-actions-setup.md"
     },
     {
       "id": "development",
